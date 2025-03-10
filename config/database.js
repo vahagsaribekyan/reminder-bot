@@ -8,7 +8,13 @@ const dialect = process.env.DATABASE_DIALECT || 'postgres';
 
 const sequelize = new Sequelize(database, username, password, {
   host: host,
-  dialect: dialect
+  dialect: dialect,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Use this if you get SSL errors
+    },
+  },
 });
 
 module.exports = sequelize;
