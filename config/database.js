@@ -11,8 +11,8 @@ const sequelize = new Sequelize(database, username, password, {
   dialect: dialect,
   dialectOptions: {
     ssl: {
-      require: true,
-      rejectUnauthorized: false, // Use this if you get SSL errors
+      require: false,
+      rejectUnauthorized: false,
     },
   },
 });
